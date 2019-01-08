@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>猜数字游戏</title>
+</head>
+
+<body>
+    <h1 title="一个简单的js运用实例">猜数字游戏</h1>
+    <p>我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</p>
+    <label for="ids">数字:</label>
+    <input type="number" id="ids" name="ids">
+    <button id="button">测试</button>
+    <div>
+        <p id='msg'></p>
+        <p id="error" style="color: red;"></p>
+        <p id="info"></p>
+    </div>
+</body>
+<script>
+    var msg = document.getElementById("msg");
+    var error = document.getElementById("error");
+    var info = document.getElementById("info");
+    var button = document.getElementById("button");
+    var buttonBegin = document.createElement("button");
+    /**获取用户输入的值*/
+    inputValue = 0;
+    /**默认值*/
+    Number = 0;
+    /**次数*/
+    times = 1;
+    /**随机生成1到100之内的整数*/
+    Number = Math.floor(Math.random() * 100) + 1;
+    /**比较数字大小*/
+    function comprile(num, Number) {
+        num = parseInt(num);
+        Number = parseInt(Number);
+        info.style = '';
+        if (times == 1) {
+            msg.textContent = "之前猜的数:"
+        }
+        msg.textContent = msg.textContent + num + " ";
+        if (num == Number) {
+            info.textContent = '你猜对了.重新开始游戏!';
+            info.style = "color : lightblue";
+            error.textContent = "";
+            setGameAgain();
+        } else if (times == '10') {
+            info.textContent = 'GAME OVER!';
+            error.textContent = "";
+            setGameAgain();
+        }
+        else {
+            error.textContent = "你猜错了";
+            if (num > Number) {
+                info.textContent = '刚才你猜高了';
+            } else if (num < Number) {
+                info.textContent = '刚才你猜低了';
+            }
+        }
+        /**次数+1*/
+        times++;
+    }
+    /**重启游戏*/
+    function regetGame() {
+        times = 1;
+        buttonBegin.parentNode.removeChild(buttonBegin);
+        msg.textContent = "";
+        info.textContent = "";
+        error.textContent = "";
+        button.disabled = false;
+        Number = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("ids").value = "";
+    }
+    function setGameAgain() {
+        buttonBegin.textContent = '重新开始游戏';
+        button.disabled = true;
+        document.body.appendChild(buttonBegin);
+        buttonBegin.addEventListener("click", regetGame);
+    }
+    /**获取输入值*/
+    function getInputValue() {
+        inputValue = document.getElementById("ids").value;
+
+        if (inputValue == "") {
+            inputValue = 0;
+        }
+        inputValue = parseInt(inputValue);
+    }
+    /**检测按钮*/
+    let testButton = document.getElementById("button");
+    testButton.addEventListener("click", function () {
+        getInputValue();
+        comprile(inputValue, Number);
+    });
+</script>
+
+</html>

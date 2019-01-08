@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量测试</title>
+    <h1>control</h1>
+    <button>测试</button>
+</head>
+<body>
+    
+</body>
+<script>
+    let button = document.querySelector("button");
+    
+    button.addEventListener("click",function(){
+    if(button.textContent == '测试'){
+        button.textContent = "发布";
+        button.style = "color:red";
+    }else{
+        button.textContent = "测试";
+        button.style = "color:lightblue"
+        // print(111);
+    }
+    });
+</script>
+</html>

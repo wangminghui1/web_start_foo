@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Social</title>
+  </head>
+
+  <body onKeyDown = _b()>
+    <!-- put navigation menu just below here -->
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="pictures.html">Pictures</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li>Social</li>
+    </ul>
+    <!-- <h1>Social media</h1> -->
+    <dl>
+        <dd><a href="index.html">Homepage</a></dd>
+        <dd><a href="pictures.html">Pictures</a></dd>
+        <dd><a href="projects.html">Projects</a></dd>
+        <dd>Social</dd>
+    </dl>
+    <button onclick="add()">确定</button>
+    <!-- <p>Welcome to my social media page. I am currently antisocial, but will start putting my social media widgets on here when the time is right.</p> -->
+  </body>
+  <script>
+      function add(){
+        //   prompt("what?");
+        alert("a");
+      }
+      function _b(){
+          if(event.keyCode == 13){
+              add();
+          }
+      }
+  </script>
+</html>

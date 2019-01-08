@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件</title>
+</head>
+<body>
+    <h1>测试文件上传</h1>
+    <form>
+        <div>
+            <label for="id1">文件上传</label>
+            <input name='id1' id='id1' value="测试上传文件">
+        </div>
+        <div>
+            <label for="id2">上传</label>
+            <input name='id2' id='id2' type="file">
+        </div>
+       <p>
+           <input type="submit" value="提交">
+       </p> 
+    </form>
+    <h1>测试js</h1>
+    <button>测试一下</button>
+</body>
+<script>
+    //获取b所有utton标签的dom对象
+    var buttons = document.querySelectorAll("button");
+    for(let i=0; i < buttons.length; i++){
+        buttons[i].addEventListener("click",createP);
+    }
+
+    function createP(){
+        //创建p标签
+        let p = document.createElement("p");
+        p.textContent="你看这是啥!";
+        /*将创建的p标签作为子节点放入body中*/
+        document.body.appendChild(p);
+
+    }
+</script>
+</html>

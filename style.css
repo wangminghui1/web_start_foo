@@ -1,0 +1,20 @@
+.output,.input{
+    width: 90%;
+    padding: 10px;
+    height: 10em;
+    border: 1px solid #0095dd;
+}
+html {
+  background-color: white;
+  font-size: 20px;
+}
+
+ul {
+  background: red;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+li {
+  margin-left: 20px;
+}

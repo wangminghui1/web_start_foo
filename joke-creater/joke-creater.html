@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch</title>
+</head>
+<body>
+        <!-- <input type='text' onkeyup="value=value.replace(/^(-1+)|[^\d]+/g,'')"> -->
+        <label for="select">测试:</label>
+        <select id="select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <p></p>
+</body>
+<script>
+    var select = document.getElementById("select");
+    var pragh = document.querySelector("p");
+
+    select.addEventListener("change",function(){
+        switch(select.value){
+            case '1':
+            pragh.textContent = 'one';
+            break;
+            case '2':
+            pragh.textContent = "two";
+        }
+    });
+</script>
+</html>

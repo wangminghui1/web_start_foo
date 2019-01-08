@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>表单</title>
+</head>
+
+<body>
+     <form action="/page/contract/add" method="POST">
+        <fieldset>
+            <legend>Info-Employee</legend>
+            <div>
+                <label for="userName">userName:</label>
+                <input type="text" id="userName">
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <label for="name">
+                    Name: <input type="text" id="name" name="user_name">
+                </label>
+            </div>
+            <div>
+                <label for="msg">mssage:</label>
+                <textarea id="text" id="msg"></textarea>
+            </div>
+            <div>
+                button 默认为submit? 还是说在form标签内默认为submit
+                <button>保存</button>
+            </div>
+        </fieldset>
+    </form>
+    <p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+
+    <!-- So this: -->
+    <div>
+        <label for="username">Name:</label>
+        <input type="text" name="username">
+        <label for="username"><abbr title="required">*</abbr></label>
+    </div>
+
+    <!-- would be better done like this: -->
+    <div>
+        <label for="username">
+            <span>Name:</span>
+            <input id="username" type="text" name="username">
+            <abbr title="required">*</abbr>
+        </label>
+    </div>
+
+    <!-- But this is probably best: -->
+    <div>
+        <label for="username">Name: <abbr title="required">*</abbr></label>
+        <input id="username" type="text" name="username">
+    </div>
+    <div>
+        <label for="age">年龄:</label>
+        <input id="age" name="age" type="number" max="10">
+    </div>
+</body>
+<script type="text/javascript" src="form.js"></script>
+
+</html>

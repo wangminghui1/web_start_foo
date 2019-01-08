@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+
+<body>
+    <h1>测试数组</h1>
+    <input type="text" id='input' name='thind'>
+    <button id="button">search</button>
+</body>
+<ul id="unorder">
+
+</ul>
+<script>
+    arrList = [];
+    /*ul标签*/
+    var un = document.getElementById("unorder");
+    /**input*/
+    var input = document.getElementById("input");
+    /**button*/
+    var button = document.getElementById("button");
+    /*绑定监听事件*/
+    button.addEventListener("click", function () {
+        if (input.value != "") {
+            /**每次触发点击事件时,西安清空un对象内的所有子元素*/
+            un.innerHTML = "";
+            arrList.unshift(input.value);
+            for (let i = 0; i < arrList.length; i++) {
+                var valueText = arrList[i];
+               var liev = document.createElement("li");
+               liev.textContent = valueText;
+               un.appendChild(liev);
+            }
+            if(arrList.length >=5){
+                arrList.pop();
+            }
+            input.value = "";
+        }
+    });
+</script>
+
+</html>
