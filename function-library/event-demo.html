@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>测试事件</button>
+</body>
+<script>
+   let _b = document.querySelector("button");
+   _b.addEventListener("click",function(){
+       let key = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+       console.log(key);
+        document.body.style.backgroundColor = key;
+   });
+
+   function random(num){
+       console.log(num);
+       console.log(Math.random() * (num + 1));
+       console.log(Math.floor(Math.random() * (num + 1)));
+    return Math.floor(Math.random() * (num + 1));
+   }
+</script>
+</html>
