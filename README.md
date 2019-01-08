@@ -1,0 +1,3 @@
+# web_start_foo
+js学习笔记
+第一次使用github管理代码...
